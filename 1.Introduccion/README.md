@@ -1,0 +1,4 @@
+# INTRODUCCION
+- comentarios
+- la consola
+- 
