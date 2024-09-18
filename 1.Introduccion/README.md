@@ -1,8 +1,8 @@
 # Introduccion
 - **Temario**
   - [comentarios](#comentarios) 
-  - la consola
-  - Naining
+  - [la consola](#consola)
+  - [Naining](#naining)
   
 ## Comentarios
 Es la parte denttro de mi archivo de codigo que no es leido ni ejecutado por el interpetre de `js`.
@@ -77,3 +77,36 @@ lenguajes=[
    {nombre:"php", extencion:".php"}
 ]
 ```
+[para ver los ejemplos has clic aqui](consola.js)
+## naining
+es una tecnica para nombrar variables, funcion y clases dentro de un lenguaje de programacion. 
+Las variables tienen reglas muy especificas a la hora de designar sus nomber
+### usos incorrectos
+- No se pueden usar espacios.
+>[!WARNING]
+```js
+> # incorrecto
+con espacio=45
+```
+- No usar un numero delante
+>[!WARNING]
+```js
+> # incorrecto
+1numero=45
+```
+- Evitar simbolos y `snake_case`
+>[!WARNING]
+```js
+> # incorrecto
+dame$=45
+> incorrecto
+con_guiones_bajos="no es correcto"
+```
+### usos correctos
+- debemos usar nombres que expliquen que aportara esa variable a nuestro codigo
+- usar `camelCace`
+>[!INFORMATION]
+> ```js
+> #Correcto
+> edadAlumno=45
+> ```
