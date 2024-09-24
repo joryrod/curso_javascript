@@ -38,5 +38,26 @@ Los valores de tipo numero, como es de esperar son numeros y en js se escribe o 
 
 > [!TIP]
 > cuando javascript hace trabajo de memoria (cuando crea un patron de bit para almacenar) todos los numeros son almacenados como decimal positivo.
+```js
+// dato numerico de tipo entero
+// entero positivo 
+23
+// entero negotivo
+-23
+// decimal positivo
+.0
+// decoimal negativo
+-3,6
+```
+#### numeros especiales
+en js ewxisten tres valores de tipo numero que se consideran un dato primitivo numerico de tip0o especial.
+
+``` js
+Infinity
+- Infinity
+NaN // not a number
+// no es un numero
+// cuando el resultado de una operacion es matematicamente imposible.
+```
 - tipos (tipos de datos)
 - operadores
