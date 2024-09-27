@@ -8,6 +8,7 @@
       - [Arimetica](#arimetica)
       - [cadenas](#cadenas)
       - [concatenacion](#concatenacion)
+      - [plantillas literales](#plantillas-literales)
 ## Valores
 Imagina un mar de bits
 Una computadora moderna tiene mas de 100 mil millones de bits almacenados en su `memoria de trabajo` o `memoria principal` o `memoria volatil` o `ram`.
@@ -137,4 +138,20 @@ ahora tabularemos haciendo uso del caracter de escape
 ```js
 "sin tabular \t y tabulado"
 ```
-### concatenacion
+#### concatenacion
+el unico operador aritmetico que puede ser usadoi por cadenas es el operador de suma (+) puede ser usado entre dos o mas cadenas y pasa a ser llamado operador de concatenacion, lo que realiza es unir cadenas en una sola.
+```js
+"hola"+" "+"mundo"
+```
+#### plantillas literales
+las plantillas literales mensionadas anteriormente con el nombre de acentos graves son usadas para mostrar texto literal el codigo o el resultado sera tranformado en un dato de tipo texto y se incluira en la posicion en que se encuentra.
+
+para hacer uso de esta funcionalidad debemos usar, la siguiente exprecion `${}`.
+```js
+// creando una plantilla literal - template literals
+''
+// usando js dentro de una plantilla literal
+`La suma de 1+1 es ${1+1}`
+```
+> [!TIP]
+> se dice literal por que con el formato que codificamos sera mostrado de esa misma forma en la consola
