@@ -172,3 +172,27 @@ Un ejemplo es el operador `typeof`, este operador produce un valor de cadena que
 console.log(typeof 5)
 ```
 #### Valores Boleanos
+este tipo de dato primitivo es util cuando tenemos un valor que distinga solo entre 2 posibilidades, como `si`y `no` o `esncendido` y `apagado`. 
+
+Para para este proposito js tiene un tipo de dato `booleano`, que tiene solo dos valores `true` y `falce`
+
+**que formas de producir valores boleanos tenemos**
+
+1. **Usando operadores de comparacion**
+
+los operadores de comparacion son los sgts:
+- Mayor que `(>)`
+- Menor que `(<)`
+- Mayor o igual que `(>=)`
+- Menor o igual que `(<=)`
+- Igual a `(==)`
+- Extrictamente igual `(===)`
+- No es igual a `(!=)`
+
+2. **Usando los Operadores Logicos**
+
+JavaScript soporta tres operadores logicos
+- and `(y)` representacion en js `&&`
+- or `(o)` representacion en js `||`
+- not `(no)` representacion en js `!`
+**Observacion** este es un operador unario que su funcion es invertir el valor que tiene a su derecha `!true` produce `falce`
