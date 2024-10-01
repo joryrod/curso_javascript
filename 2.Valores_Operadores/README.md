@@ -9,6 +9,8 @@
       - [cadenas](#cadenas)
       - [concatenacion](#concatenacion)
       - [plantillas literales](#plantillas-literales)
+      - [operadores unarios](#operadores-unarios)
+      - [Valores Boleanos](#valores-boleanos)
 ## Valores
 Imagina un mar de bits
 Una computadora moderna tiene mas de 100 mil millones de bits almacenados en su `memoria de trabajo` o `memoria principal` o `memoria volatil` o `ram`.
@@ -155,3 +157,18 @@ para hacer uso de esta funcionalidad debemos usar, la siguiente exprecion `${}`.
 ```
 > [!TIP]
 > se dice literal por que con el formato que codificamos sera mostrado de esa misma forma en la consola
+
+#### Operadores unarios
+no todos los operadores son simbolos, algunos se escriben como palabras.
+
+Un ejemplo es el operador `typeof`, este operador produce un valor de cadena que indica el tipo de valor que le proporcionamos.
+
+`operadores binarios` se les conoce por que operan sobre dos valores `2*5`
+
+`operador unario` por que solo trabaja con un valor.
+
+```js
+// para mpoder ver su funcionalidad o el valor que genera siempre debemos mostrarlo en un console.
+console.log(typeof 5)
+```
+#### Valores Boleanos
