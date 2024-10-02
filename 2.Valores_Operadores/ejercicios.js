@@ -15,3 +15,11 @@ console.log((8+(10/(8+10)+(10/2)))/(8+(10/(2+3))))
 console.log((8+10+2)/(10+(6/2)))
 console.log((8+10+(6/(2*2)))/(8+10*(10/2)))
 console.log((8+10/2+12)/8)
+
+//crear un variable de numero y mostrar por terminal el numero sumando as uno
+numero=10
+console.log(++numero)
+//crear una variable que almacena un numero yv que el trminal se muestre el numero original y luego el numero sumado mas dos
+num=12
+console.log(num++) 
+console.log(num)

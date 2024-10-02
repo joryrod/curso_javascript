@@ -14,14 +14,15 @@ console.log(NaN == NaN)
 
 
 // Averiguar la forma con que se realizan las comparaciones con cadenas de texto
-// todas las letras mayusculas seran menoras a las mayasculas
+// // todas las letras mayusculas seran menoras a las mayasculas
+// Ardvark < Zoroaster
+console.log("Ardvark" < "Zoroaster")
+// Por lo tanto, como el primer carácter de "Ardvark" es menor que el primer carácter de "Zoroaster", la expresión completa es verdadera.
+
 // Z>a
 // por que js compara los codigos unicode de cada caracter
 // !>=?
 console.log("!">="?")
-
-// Ardvark < Zoroaster
-console.log("Ardvark" < "Zoroaster")
 
 // en el caso del operador  && su resultado sera verdadero solo si ambos valores son verdaderos
 console.log(true && false)
@@ -31,7 +32,13 @@ console.log(true && true)
 console.log(true || false)
 console.log(false || false)
 console.log(true || true)
+console.log(0 || "")
 
 // en el caso del operador ! invierte el valor dado
 console.log(!true)
 console.log(!false) 
+
+//usando el operador relacional
+//solo funciona en objetos
+// averiguar por que sale falce 
+console.log("hola" in ["hola","mundo"])
