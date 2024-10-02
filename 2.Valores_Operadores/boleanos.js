@@ -44,3 +44,4 @@ console.log(!false)
 console.log("hola" in ["hola","mundo"])
 
 // js en un array no busca valores especificos sino que busca los valores por su indice y dea cuerdo a eso te muestra el resultado 
+console.log(0 in ["hola","mundo"])
