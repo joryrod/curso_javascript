@@ -94,3 +94,26 @@ if true{
   prompt("escribe tu nombre")
 }
 ```
+**Condicion de doble evaluacion `if else`**
+existen casos en los que tendremos que ejecutar un codigo si es verdad pero tambien si es falso, ejecucion condicional de dos caminos.
+```js
+let edadPersona = 16;
+if (edadPersona >= 18){
+  console.log("ere mayor de edad");
+}else {
+  console.log("eres menor de edad");
+}
+```
+**condicion multiple `if else if`**
+se utiliza cuando se tiene que evaluar y devolver varias opciones o multiples  respuesta 
+```js
+let total_compra=30
+if (total_compra > 50){
+  console.log(`tiene un descuento del 10% ${total_compra*0.10}`)
+}
+else if (total_compra>100 && total_compra<500){
+  console.log(`tienes un descuento del 20% ${total_compra*0.20}`)
+}else{
+  console.log(`tienes un descuento del 50% ${total_compra*0.50}`)
+}
+```
