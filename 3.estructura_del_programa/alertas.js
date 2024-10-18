@@ -1,12 +1,17 @@
-// para mostrar un mensaje en mi ventana
-alert("hola")
+//para mostrar un mensaje en mi ventana
+alert("como te llamas?")
+//para pedir al usuario que elija una opcion
+confirm("escoje")
+//para pedir al usuario que ingrese una una informacion
+prompt("escribe algo")
 
-// para pedir al usuario elija una opcion
-respuestaConfirm=confirm("escoje")
-
-// para pedir que el usuario ingrese una informacion
-RespuestaPrompt=prompt("escribe algo mascota")
+//si quiero lamacenar el valor dentro de una variable
+resp_alert=alert("alerta")
+resp_confirm=confirm("elige")
+resp_prompt=prompt("escribe")
+//o
 console.log(`
-    Respuesta de confirm: ${respuestaConfirm}
-    respuesta de prompt: ${RespuestaPrompt}
+    respuesta de alert: ${resp_alert},
+    respuesta de confirm: ${resp_confirm},
+    respuesta de prompt: ${resp_prompt}
     `)

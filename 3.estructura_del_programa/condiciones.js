@@ -1,46 +1,50 @@
-// ejemplo de condicion simple
-// Capturamos la edad de lo que convertimos a numero
-let edad = Number(prompt("ingresa tu edad: "))
-// Verificamos si el tipo de dato edad es number realmente
-if (typeof edad =="number"){
-// Si la comparacion es verdadera mostraremos por la consola la raiz cuadrada de edad
-    console.log(edad*edad)
-};
+// capturamos edad y convertimos a numero
+// let edad= Number (prompt("ingresa tu edad"))
+//console.log(typeof edad)
 
-// ejemplo de una condicion simple de una sola linea
-if (1+1==2) console.log("es verdad");
+// if (Number.isNaN(edad)){}
+//evalua si el tipo de dato es un numero o no
+// if (typeof edad == "number"){
+//     // si la comparacion es verdad mostraremos  por consola la raiz cuadrada de edad
+//     console.log(edad*edad)
+// };
 
-//Ejercicios: de condiciones
-// Crear un programa que me pida un numero y me muestre por consola si es un numero par o impar
-let numero = Number(prompt("ingrese un numero: ")) ;
-if (numero % 2 == 0) {
-  console.log("el numero es par");
-}else {
-  console.log("el numero es impar");
-}
+//ejemplo de condicion simple en una sola linea, no tiene cuerpo ({})
+// if (1+3==2) console.log("es verdad");
 
-// EJERCICIO
-//crear un programa que pida al usuario su edad y dependiendo su edad le daremos una serie de regalos
-// REGALOS
+//Ejercicio  de condiciones 
+//crear un programa que me pida un numero y me muestre por consola si es par o impat
+// let numero=Number(prompt("ingresa un numero: "))
+// if (numero % 2 == 0) {
+//     console.log(`El numero ${numero} es par`);
+// }else{
+//     console.log(`El numero ${numero} es impar`);
+// }
+
+// ejercicio de condicioon multiple
+// let totalCompra=Number(prompt("Total de tu compra es: "))
+// if (totalCompra>50 && totalCompra<100){
+//   console.log(`tiene un descuento del 10% ${totalCompra*0.10}`)
+// }else if(totalCompra>100 && totalCompra<500){
+//   console.log(`tienes un descuento del 20% ${totalCompra*0.20}`)
+// }else {
+//   console.log(`tienes un descuento del 50% es decir solo paga ${totalCompra*0.50}`)
+// }
+
+//Ejercicio
+//crear un programa que pida al usuario su edad y depoendiendo la edad le daremos una serie de regalos
+//regalos
 /**
- * - si su edad esta entre 4 a 8 años: te ganaras un chupetin
- * - si su edad esta entre 9 a 13 años: te ganaras una pelota firmada por cuto
- * - si su edad esta entre 14 a 17 años: te ganaras un celular nokia 6101.
- * - si su edad es mayor igual a 18 : te ganaras al primo lo haces leña.
+ *  - si su edad esta entre 4 a 8 años te ganaras un chupetin
+ * - si su edad esta entre 9 a 13 años te ganaras una pelota firmada por messi
+ * - si su edad esta entre 14 a 17, te ganars un celular nokia 6101
+ * - si su edad es mayor igual a 18 te ganaras al primo
  */
+let edad=Number(prompt("ingresa tu edad y gana un premio"))
+if (edad>=4 && edad<=8) console.log("te ganaste un chupetin 🍭")
+else if (edad>=9 && edad<=13) console.log("te ganaste una pelota ⚽")
+else if (edad>=14 && edad<=17) console.log("te ganaste un celular Nokia 6101 📱")
+else if (edad>=18 && edad<=100) console.log("te ganaste un primo 😂")
+else console.log("no tienes la edad necesaria :(")
 
-let (edad = Number(prompt("Ingrece tu edad:")));
-
-if (!Number.isNaN(edad)) {
-    if (edad >= 4 && edad <= 8) {
-        console.log("Te ganarás un chupetín");
-    } else if (edad >= 9 && edad <= 13) {
-        console.log("Te ganarás una pelota firmada por Cuto");
-    } else if (edad >= 14 && edad <= 17) {
-        console.log("Te ganarás un celular Nokia 6101");
-    } else if (edad >= 18) {
-        console.log("Te ganarás al primo, lo haces leña");
-    }else{
-        
-    }
-}
+//
