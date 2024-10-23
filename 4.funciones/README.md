@@ -1,8 +1,9 @@
 # FUNCIONES 
-- [estructura de una funcion](#estructura-de-una-funcion-como-se-crea-una-funcion)
-- [tipos de argumentos y parametros](#tipos-de-argumentos-y-parametros)
-- [argumentos y parametros posicionales](#argumentos-y-parametros-posicionales)
-- [argumentos y parametros Nominales](#aqrgumentos-y-parametros-nominales)
+- [FUNCIONES](#funciones)
+  - [Estructura de una funcion (como se crea una funcion)](#estructura-de-una-funcion-como-se-crea-una-funcion)
+  - [Tipos de Argumentos y Parametros](#tipos-de-argumentos-y-parametros)
+    - [Argumentos y parametros Posicionales](#argumentos-y-parametros-posicionales)
+    - [AQrgumentos y Parametros Nominales](#aqrgumentos-y-parametros-nominales)
 
 Las funciones en js son `bloques de codigo ejecutable`, a los que podemos pasar parametros y operar con ellos.
 nos sirve para modular (modularizar) nuestros programas y estructurarlos en bloques que `realicen una tarea concreta`, de manera que nuestro codigo sea mas legible y mantenible. 
@@ -67,3 +68,16 @@ function sumaNumeros(a,b,c,d){
 sumaNumeros(2,6,7,8)
 ```
 ### AQrgumentos y Parametros Nominales
+Se les llama nominales se les conoce a los argumentos que en su creacion se asocian a un parametro en especifico.
+```js
+//nominal
+function registroAlumno(nombre,apellido,sexo){
+    let respuesta=`${nombre},${apellido},${sexo}`
+    return respuesta
+}
+registroAlumno(sexo="primo",nombre="edwin",apellido="del mar")
+//posicional
+registroAlumno("jory", "rodriguez", "todos los dias")
+```
+> [!INFO]
+> Posicionales en orden y Nominales especificar el parametro y su valor.

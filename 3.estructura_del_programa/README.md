@@ -7,8 +7,8 @@
   - [Binding o enlace](#binding-o-enlace)
   - [El Entorno](#el-entorno)
   - [Control de Flujo](#control-de-flujo)
-  - [Ejecucion condicional](#ejecucion-condicional)
-  - [Bucles](#bucles)
+    - [Ejecucion condicional](#ejecucion-condicional)
+    - [Bucles](#bucles)
 ## Interaccion basica con el usuario
 Podemos interactuar con el usuario desde Javascript utilizando un metodo sencillo que viene implementado en los navegadores.
 El metodo es conocido como `window` o el metodo de ventana, este metodo en realidad es un objeto que contiene o almacena varias funciones, entre ellas las de mostrar mensajes o pedir datos al usuario.
@@ -118,6 +118,22 @@ if (totalCompra>50 && totalCompra<100){
   console.log(`tienes un descuento del 50% ${totalCompra*0.50}`)
 }
 ```
+- **Condicion multiple `switch`**
+js dispone de una opcion para crear estructuras condicionales multiples. `switch` permite crear estructuras mas optimizadas para cubrir un amplio abanico de posibilidades. 
+```js
+let edad=Number(prompt("ingrese su edad"))
+switch (edad) {
+  case 4:
+    console.log("tienes 4 años")
+    break;
+  case 8:
+    console.log("tienes 8 años")
+    break;
+  default:
+    console.log("tienes:", edad)
+    break;
+}
+```
 ### Bucles
 Consideremos el siguiente problema
 crear un programa que imprima los numeros del 1 al 12, una forma de hacerlo seria el siguiente:
@@ -135,6 +151,7 @@ console.log(10)
 console.log(11)
 console.log(12)
 ```
+- 
 El ejemplo anterior es valido pero la idea cuando programamos es hacer menos trabajo y no mas, en el ejercicio anterior tendremos problemas si deseamos mostrar todos los numeros menores a 1000.
 Necesitamos una manera de ejecutar un fragmento de codigo multiples de veces. A esta forma de control de flujo se le llama `bucle`.
 Para crear un bucle tenemos dos formas de hacerlo
