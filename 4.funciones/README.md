@@ -4,6 +4,11 @@
   - [Tipos de Argumentos y Parametros](#tipos-de-argumentos-y-parametros)
     - [Argumentos y parametros Posicionales](#argumentos-y-parametros-posicionales)
     - [AQrgumentos y Parametros Nominales](#aqrgumentos-y-parametros-nominales)
+  - [Tipos de funciones por su notacion](#tipos-de-funciones-por-su-notacion)
+    - [Funciones como valor](#funciones-como-valor)
+    - [Funcion como declaracion](#funcion-como-declaracion)
+    - [Funcion de flecha (arrow function)](#funcion-de-flecha-arrow-function)
+    - [Diferencias](#diferencias)
 
 Las funciones en js son `bloques de codigo ejecutable`, a los que podemos pasar parametros y operar con ellos.
 nos sirve para modular (modularizar) nuestros programas y estructurarlos en bloques que `realicen una tarea concreta`, de manera que nuestro codigo sea mas legible y mantenible. 
@@ -81,3 +86,61 @@ registroAlumno("jory", "rodriguez", "todos los dias")
 ```
 > [!INFO]
 > Posicionales en orden y Nominales especificar el parametro y su valor.
+
+## Tipos de funciones por su notacion
+### Funciones como valor
+en este caso se crea una funcion como si fuera el valor de un enlace.
+```js
+let saludo=function(){
+    console.log("bienvemido")
+}
+saludo()
+```
+en este caso el nombre de la funcion sera el nombre que le pongamos al enlace y para llamarlo o ejecutarlo debemos poner el nombre del enlace mas los parentesis.
+
+al igual que una funcion clasica podemos pasarle parametros.
+
+### Funcion como declaracion
+se le conoce como funcion `declarativa` a la manera clasica de como creamos una funcion.
+```js
+function saludo(){
+    return "saludi a todos"
+}
+console.log(saludo())
+```
+ ### Funcion de flecha (arrow function)
+ Esta funcion es introducida a partir de la version de ecmaScript 5 `es5`.
+ se implemento para la creacion y ejecucion rapida y mas entendible de las funciones.
+ la funcion flecha evita la `verbosidad` en js.
+ >[!NOTE]
+ > `verbosidad` o `verboso` se utiliza en la programacion para referirce a un codigo que necesita demaciadas lineas de codigo o necesita cumplir estrictamente una serie de reglas, podemos comparar la `verbosidad` a un texto demaciado extenso o redundante.
+
+Se crea de la misma manera que una funcion como valor, eso quiere decir que la funcion flecha sera el valor de un enlsace.
+
+La funcion flecha tiene la siguiente estructura.
+el parametro seguido del simbolo flecha `=>` y del cuerpo de ser necesario o solo de codigo que se retornara.
+```js
+function saludo(){
+    return "hola mundo"
+}
+console.log(saludo)
+
+
+- arrow fuction
+
+let saludo=()=>("hola mundo")
+console.log(saludo())
+
+
+let mensaje=texto=>console.log("hola", texto)
+console.log(mensaje("el primo"))
+
+
+// en el caso de tener mas de un parametro y ejecutar mas de una sola linea de codigo
+let registroUsuario=(nombre,apellido)=>{
+    let alumno=`${nombre},${apellido}`
+    return alumno
+}
+console.log(registroUsuario("edwin","cachondo"))
+```
+### Diferencias
