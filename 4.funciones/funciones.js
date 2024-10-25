@@ -4,7 +4,17 @@
 //     console.log("Bienbenido")
 // }
 
-let saludo=function(){
-    console.log("bienvemido")
+// let saludo=function(){
+//     console.log("bienvemido")
+// }
+// saludo()
+
+
+// binding en js lo que hace es subir las funciones declarativas a la cabecera de mi archivo.
+console.log(despedida())
+
+let saludo=()=>{return "hola primo"}
+function despedida(){
+    return "adios"
 }
-saludo()
+console.log(saludo())

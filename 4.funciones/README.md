@@ -9,6 +9,8 @@
     - [Funcion como declaracion](#funcion-como-declaracion)
     - [Funcion de flecha (arrow function)](#funcion-de-flecha-arrow-function)
     - [Diferencias](#diferencias)
+    - [binding](#binding)
+  - [la pila de llamadas (call stack)](#la-pila-de-llamadas-call-stack)
 
 Las funciones en js son `bloques de codigo ejecutable`, a los que podemos pasar parametros y operar con ellos.
 nos sirve para modular (modularizar) nuestros programas y estructurarlos en bloques que `realicen una tarea concreta`, de manera que nuestro codigo sea mas legible y mantenible. 
@@ -143,4 +145,52 @@ let registroUsuario=(nombre,apellido)=>{
 }
 console.log(registroUsuario("edwin","cachondo"))
 ```
-### Diferencias
+### Diferencias 
+las diferencias que tenemos al momento de crear una funcion declarativa , funcion como valor y flecha esel binding
+### binding
+es una tecnica que guarda las funciones y variables (enlaces) al principio del archivo js.
+```js
+function saludo(){
+    return "hola primo"
+}
+function despedida(){
+    return "adios primo"
+}
+```
+```js
+saludo()
+despedida()
+```
+
+## la pila de llamadas (call stack)
+es una tecnica que se usa para controlar de manera correcta la ejecucion de una funcion. 
+
+**averiguar sobre LFO**
+
+```js
+//programa que haga una ensalada
+function cortarTomate() {
+    console.log("cortando tomates")
+}
+function cortarLechuga() {
+    console.log("cortando lechuga")
+}
+function cortarPepino() {
+    console.log("cortando pepino para el primo")
+}
+function cortarLimon() {
+    console.log("cortando limon")
+}
+function prepararEnsalada() {
+    cortarTomate()
+    cortarLechuga()
+    cortarPepino()
+    cortarLimon()
+    console.log("mezclando las verduras")
+}
+function comer() {
+    prepararEnsalada()
+    console.log("tragando la ensalada")
+}
+comer()
+```
