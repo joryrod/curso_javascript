@@ -12,6 +12,8 @@
     - [binding](#binding)
   - [la pila de llamadas (call stack)](#la-pila-de-llamadas-call-stack)
   - [CLOSURE o Funciones de Cierre (Funciones que retorna funciones)](#closure-o-funciones-de-cierre-funciones-que-retorna-funciones)
+    - [Tipo Clase](#tipo-clase)
+    - [prototype (tarea- averiguar y sus ejemplos)](#prototype-tarea--averiguar-y-sus-ejemplos)
 
 Las funciones en js son `bloques de codigo ejecutable`, a los que podemos pasar parametros y operar con ellos.
 nos sirve para modular (modularizar) nuestros programas y estructurarlos en bloques que `realicen una tarea concreta`, de manera que nuestro codigo sea mas legible y mantenible. 
@@ -218,3 +220,34 @@ retornaValor(10)()
 ```
 > [!NOTE]
 > Las funciones `closure`son usadas por que pueden mantener el valor de sus enlaces o variables locales en todo el proceso de la ejecucion de su funcion padre por cada llamada que se realize.
+
+### Tipo Clase
+son funciones cuyo uso son iguales a las clases dentro de la ejecucion de una clase tenemos lo que se llama como `instancia` en js tenemos funciones `closure` que se pueden instanciar al igual que una clase, la diferencia con las funciones `closure` clasicas es que en esta hacemos uso de la palabra reservada `keyword` llamada `this`.
+```js
+function contador(){
+    this.contador=0
+    this.incre=function(){
+        this.contador++
+    }
+    this.decre=function(){
+        this.contador--
+    }
+}
+// realizamos la instancia
+let count1=new contador()
+console.log(count1.contador)
+count1.incre()
+console.log(count1.contador)
+
+for(let i=0;i>5;i++){
+    count1.incre()
+}
+```
+
+> [!NOTE]
+> La funcion closure de tipo clase no hace uso de `return` en sus funciones al hacer us de `this` casa funcion o variable estara enlazada al objeto que se cree.
+
+> [!WARNING]
+> El problema principal de este tipo de funcion, es que cuando creamos un nuevo objeto a partir de la funcion tipo clase reservara espacio en memoria para toda la clase y sus valores creados eso quiere decir variables y funciones, cada vez que llamamos a una funcion esta se replica en memoria.
+
+### prototype (tarea- averiguar y sus ejemplos)
