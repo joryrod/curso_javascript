@@ -251,3 +251,142 @@ for(let i=0;i>5;i++){
 > El problema principal de este tipo de funcion, es que cuando creamos un nuevo objeto a partir de la funcion tipo clase reservara espacio en memoria para toda la clase y sus valores creados eso quiere decir variables y funciones, cada vez que llamamos a una funcion esta se replica en memoria.
 
 ### prototype (tarea- averiguar y sus ejemplos)
+Prototype en Java es un patrón de diseño creacional que permite copiar objetos sin depender de sus clases específicas. Esto es útil cuando se desea crear nuevas instancias de objetos similares sin tener que reconstruirlos desde cero. En Java, el patrón Prototype se implementa a menudo mediante la interfaz Cloneable y el método clone().
+
+Aquí tienes un ejemplo básico de cómo podrías implementar el patrón Prototype en Java:
+
+1. Definición de la clase base que implementa Cloneable
+
+```js
+// Clase abstracta que implementa Cloneable
+
+abstract class Shape implements Cloneable {
+    private String id;
+    protected String type;
+
+    abstract void draw();
+
+    public String getType(){
+        return type;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    // Implementación del método clone
+    public Object clone() {
+        Object clone = null;
+        try {
+            clone = super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return clone;
+    }
+}
+```
+
+2. Clases concretas que extienden la clase base
+
+```js
+// Clase que representa un Círculo
+
+class Circle extends Shape {
+    public Circle() {
+        type = "Círculo";
+    }
+
+    @Override
+    void draw() {
+        System.out.println("Dibujando un Círculo");
+    }
+}
+
+// Clase que representa un Cuadrado
+class Square extends Shape {
+    public Square() {
+        type = "Cuadrado";
+    }
+
+    @Override
+    void draw() {
+        System.out.println("Dibujando un Cuadrado");
+    }
+}
+```
+
+3. Clase de prototipo de Shape que almacenará los objetos prototipo
+
+```js
+import java.util.Hashtable;
+
+class ShapeCache {
+    private static Hashtable<String, Shape> shapeMap = new Hashtable<>();
+
+    public static Shape getShape(String shapeId) {
+        Shape cachedShape = shapeMap.get(shapeId);
+        return (Shape) cachedShape.clone();
+    }
+
+    // Cargar los objetos prototipo en caché
+    public static void loadCache() {
+        Circle circle = new Circle();
+        circle.setId("1");
+        shapeMap.put(circle.getId(), circle);
+
+        Square square = new Square();
+        square.setId("2");
+        shapeMap.put(square.getId(), square);
+    }
+}
+```
+
+4. Ejemplo de uso del patrón Prototype
+
+```js
+public class PrototypePatternDemo {
+    public static void main(String[] args) {
+        // Cargar los prototipos en caché
+        ShapeCache.loadCache();
+
+        // Obtener un clon de Círculo y Cuadrado
+        Shape clonedShape1 = ShapeCache.getShape("1");
+        System.out.println("Forma : " + clonedShape1.getType());
+        clonedShape1.draw();
+
+        Shape clonedShape2 = ShapeCache.getShape("2");
+        System.out.println("Forma : " + clonedShape2.getType());
+        clonedShape2.draw();
+    }
+}
+```
+Explicación
+
+1. `Shape`: Clase base abstracta que implementa Cloneable y tiene un método clone() para crear una copia del objeto.
+
+
+2. `Circle y Square`: Clases concretas que extienden Shape y sobrescriben el método draw().
+
+
+3. `ShapeCache`: Clase que mantiene un registro de objetos prototipo y permite clonar a través del método getShape().
+
+
+4. `PrototypePatternDemo`: Clase principal donde se prueba el patrón Prototype clonando objetos de tipo Circle y Square.
+
+
+
+Salida Esperada
+
+```js
+Forma : Círculo
+Dibujando un Círculo
+Forma : Cuadrado
+Dibujando un Cuadrado
+```
+
+Este ejemplo demuestra cómo el patrón Prototype facilita la clonación de objetos complejos sin necesidad de reconstruirlos.
