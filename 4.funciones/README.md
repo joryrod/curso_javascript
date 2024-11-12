@@ -390,3 +390,38 @@ Dibujando un Cuadrado
 ```
 
 Este ejemplo demuestra cómo el patrón Prototype facilita la clonación de objetos complejos sin necesidad de reconstruirlos.
+
+## RECURSION EN FUNCIONES (tarea)
+## FUNCIONES CALLBACKS(tareas)
+# CLASES
+Las clases en javascript llegan en la version `ECMAScript 6`, javascript no tenia al igual que otros lenguajes de programacion orientados a objetos las `clases` ya que js se enfocaba en la `programacion funcional`, sin embargo con la llegada es `Es6`, javascript adopta ser un lenguaje de programacion multiparadigma, entre ellos la programacion orientada a objetos con la llegada de las `clases`.
+## ESTRUCTURA DE UNA CLASE EN JAVASCRIPT
+Una clase esta separada en 3 grandes secciones.
+
+1. el nombre de la clase debera ser en singular y en PascalCase
+2. debera tener atributos (valores o variables), estos deberan ser sustantivos y estar escritos en camelCase
+3. deberan tener metodos (acciones, funciones), estos deberan ser verbos o estar escritos en camelCase.
+
+> [!NOTE]
+> Una entidad: es cualquier cosa que puedes describir o que tiene atributos y acciones ejmplo carro.
+```js
+class Computadora{
+    //atributos
+    constructor(marca){
+        this.marca=marca
+        this.color=""
+        this.tipoCase="tower"
+    }
+    //metodos
+    encender(){return "estoy encendiendo"}
+    apagar(){return "estoy cerrando sesion y guardando informacion antes del apagado"}
+    escribir(){return "escribiendo mi informe"}
+    jugar(){return "jugando dota"}
+}
+//instanciar
+let miPc()=new Computador("gigabyte")
+miPc.encender()
+```
+>[!NOTE]
+>prototype=funcion
+>clase=metodo 
