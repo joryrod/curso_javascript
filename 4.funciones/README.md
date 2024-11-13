@@ -14,6 +14,10 @@
   - [CLOSURE o Funciones de Cierre (Funciones que retorna funciones)](#closure-o-funciones-de-cierre-funciones-que-retorna-funciones)
     - [Tipo Clase](#tipo-clase)
     - [prototype (tarea- averiguar y sus ejemplos)](#prototype-tarea--averiguar-y-sus-ejemplos)
+    - [RECURSION EN FUNCIONES (tarea)](#recursion-en-funciones-tarea)
+    - [FUNCIONES CALLBACKS(tareas)](#funciones-callbackstareas)
+    - [CLASES](#clases)
+    - [ESTRUCTURA DE UNA CLASE EN JAVASCRIPT](#estructura-de-una-clase-en-javascript)
 
 Las funciones en js son `bloques de codigo ejecutable`, a los que podemos pasar parametros y operar con ellos.
 nos sirve para modular (modularizar) nuestros programas y estructurarlos en bloques que `realicen una tarea concreta`, de manera que nuestro codigo sea mas legible y mantenible. 
@@ -392,7 +396,99 @@ Dibujando un Cuadrado
 Este ejemplo demuestra cómo el patrón Prototype facilita la clonación de objetos complejos sin necesidad de reconstruirlos.
 
 ## RECURSION EN FUNCIONES (tarea)
-## FUNCIONES CALLBACKS(tareas)
+En JavaScript, la recursión funciona de manera similar a otros lenguajes de programación. Una función recursiva es aquella que se llama a sí misma para resolver un problema, descomponiéndolo en subproblemas más pequeños hasta llegar a un caso base que termina la recursión.
+
+### Conceptos Clave:
+- **Recursión:** Una función se llama a sí misma para resolver un problema.
+- **Caso Base:** Condición que detiene la recursión.
+- **Llamada Recursiva:** La función se llama con parámetros modificados.
+
+Ejemplo de Factorial en JavaScript:
+```javascript
+function factorial(n) {
+    if (n === 1) return 1;  // Caso base
+    return n * factorial(n - 1);  // Llamada recursiva
+}
+console.log(factorial(5));  // Salida: 120
+```
+Ejemplo de Fibonacci:
+```javascript
+Copiar código
+function fibonacci(n) {
+    if (n === 0) return 0;  // Caso base
+    if (n === 1) return 1;
+    return fibonacci(n - 1) + fibonacci(n - 2);  // Llamada recursiva
+}
+console.log(fibonacci(6));  // Salida: 8
+```
+
+Recursión de Cola:
+
+Optimiza la recursión haciendo que la llamada recursiva sea la última operación.
+```javascript
+Copiar código
+function fibonacciTailRecursive(n, a = 0, b = 1) {
+    if (n === 0) return a;
+    if (n === 1) return b;
+    return fibonacciTailRecursive(n - 1, b, a + b);
+}
+console.log(fibonacciTailRecursive(6));  // Salida: 8
+```
+### Ventajas y Desventajas:
+- **Ventajas:** Soluciones más elegantes y fáciles de leer para problemas recursivos (por ejemplo, árboles).
+- **Desventajas:** Puede ser ineficiente o causar desbordamiento de pila si no se maneja correctamente.
+#### Optimización:
+Memorización o recursión de cola pueden mejorar el rendimiento y evitar desbordamiento de pila.
+
+
+## FUNCIONES CALLBACKS (tareas)
+En JavaScript, una función callback es una función que se pasa como argumento a otra función y que luego se invoca dentro de esa función. Las callbacks son una forma de manejar la asynchronous programming (programación asíncrona) o eventos, como cuando se trabajan con APIs o temporizadores.
+
+### Características de una Callback:
+- Se pasa como argumento a otra función.
+- Se ejecuta más tarde, generalmente después de que una operación compleja se haya completado (como una operación asíncrona).
+- Son una forma de manejar tareas asíncronas o de ordenar operaciones.
+
+Ejemplo Básico:
+```javascript
+function saludar(nombre, callback) {
+    console.log(`Hola, ${nombre}`);
+    callback();  // Ejecuta el callback
+}
+
+function despedir() {
+    console.log("Adiós!");
+}
+
+saludar("Juan", despedir);
+// Salida:
+// Hola, Juan
+// Adiós!
+```
+Ejemplo con Asincronía (setTimeout):
+```javascript
+console.log("Inicio");
+
+setTimeout(function() {
+    console.log("Esto aparece después de 2 segundos");
+}, 2000);
+
+console.log("Fin");
+```
+Salida:
+```js
+Inicio
+Fin
+Esto aparece después de 2 segundos
+```
+### Uso Común de Callbacks:
+- Eventos: como clics en botones.
+- Operaciones asíncronas: como leer archivos o hacer solicitudes HTTP.
+### Problema: Callback Hell
+Cuando las callbacks se anidan demasiado, el código se vuelve difícil de leer y mantener (callback hell). Se puede evitar con promesas o async/await.
+
+**En resumen:** Las callbacks son funciones pasadas como argumentos a otras funciones, útiles principalmente para manejar tareas asíncronas.
+
 # CLASES
 Las clases en javascript llegan en la version `ECMAScript 6`, javascript no tenia al igual que otros lenguajes de programacion orientados a objetos las `clases` ya que js se enfocaba en la `programacion funcional`, sin embargo con la llegada es `Es6`, javascript adopta ser un lenguaje de programacion multiparadigma, entre ellos la programacion orientada a objetos con la llegada de las `clases`.
 ## ESTRUCTURA DE UNA CLASE EN JAVASCRIPT
