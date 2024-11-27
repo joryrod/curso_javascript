@@ -194,6 +194,27 @@ let arr = [1, 2, 3];
 let flatMapped = arr.flatMap(x => [x, x * 2]);  // [1, 2, 2, 4, 3, 6]
 ```
 ## Objetos
+Los objetos son tipos de datos estructurados similares a las listas, para poder acceder a un elemento de la lista jv les asignaba indices, en este caso los objetos como unica diferencia de las listas nosotros podemos asignar el nombre del elemento el cual deseamos acceder a esto se le conoce como `clave:valor`
+
+cada clave:valor es un elemento de un objeto si deseamos crear mas elementos tendremos que separarlos por comas.
 ### Creacion
+Para crear un objeto debemos encerrar a los elementos con llaves `{}` para elementos estara conformado por su `clave:valor`.
+```js
+let datos_jory=["jory","rodriguez",20,"M"]
+let datosJoryObjeto={
+  nombre:"jory",
+  apellido:"Rodriguez",
+  edad:20,
+  sexo:"todos los dias",
+  ganado:["el primo","los chamos","las enfermeras","mineros"],
+  direccion:{
+    tipoCalle:"pasaje",
+    nombreCalle:"Querobamba",
+    numeroPuerta:322,
+    numeroCduarto:5
+  }
+}
+console.log(datosJoryObjeto)
+```
 ## acceder a un elemento del objeto
 ### metodos
