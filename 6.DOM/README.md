@@ -1,252 +1,133 @@
 # INDICE
-- [DOM-Document Object Modal](#dom-document-object-modal)
-- [SELECTORES - recorriendo el dom](#selectores---recorriendo-el-dom)
+- [DOM](#dom--document-objet-model)
+- [Selectores](#selectores---recorriendo-el-dom)
 - [Manipulacion del DOM](#manipulacion-del-dom)
-- [Propiedades de los elementos  DOM](#propiedades-de-los-elementos--dom)
-# DOM-Document Object Modal
-Modelo de Documento de Objeto
-el DOM es un conjunto de utilidades especificamente diseñadas para manipular documentosXML YHTML.
-El DOM transforma el archivo HTML en un arbol de nodos jerarquico, facilmente manipulado.
-El DOM convierte todo el contenido del archivo HMTL en un objeto de javascript.
+- [Propiedades de los elementos DOM](#propiedades-de-los-elementos-dom)
+- [Acciones o Eventos con elementos en el DOM (averiguar)](#acciones-o-eventos-con-elementos-en-el-dom-averiguar)
+
+# DOM -Document Objet Model
+Modelo de documento de objeto
+El `DOM` es un conjunto de utilidades especificamente diseñada para manipular documentos XML y HTML.
+El DOM transforma el archivo HTML en un arbol de nodos jerarquicos, facilemente manipulables. El DOM convierte todo el contenido de HTMl en un objeto de javascript.
 - **mi archivo index.html**
 ```html
 <body>
-    <h1 id="titulo">titulo<h1>
-    <p class="parrafo">este es la descripcion de mi pagina</p>
+    <h1 id="titulo">titulo</h1>
+    <p class="parrafo"> esta es la descripcion de mi pagina </p>
     <ul>
         <li>primer elemento</li>
         <li>segundo elemento</li>
         <li>tercer elemento</li>
     </ul>
 </body>
-
 ```
 - **mi archivo script.js**
-```javascript
+```js
 document:{
-    Element:body,
-    Attr:null,
-    Child:[
+    elemnt:body,
+    attr:null,
+    text:null,
+    child:[
         {
-            Element:h1,
-            Attr:{id:"titulo"},
+            Elemnt:h1,
+            attr:{id:"titulo"},
             text:"titulo",
-            Child:null
+            child:null
         },
         {
             Element:p,
-            Attr:{class:"parrafo"},
-            text:"este es el descripcion de mi pagina",
-            Child:null
-        },
+            attr:{class:"parrafo"},
+            text:"esta es la descripcion de mi pagina",
+            child:null
+        }
         {
             Element:ul,
-            Attr:null,
+            attr:null,
             text:null,
-            Child:[
+            child:[
                 {
-                   Element:li,
-                   Attr:null,
-                   text:"primer elemento",
-                   Child:null 
+                    Element:li,
+                    attr:null,
+                    text:"primer elemento",
+                    child:null
                 },
                 {
                     Element:li,
-                    Attr:null,
+                    attr:null,
                     text:"segundo elemento",
-                    Child:null 
+                    child:null
                 },
                 {
                     Element:li,
-                    Attr:null,
-                    text:"tercero elemento",
-                    Child:null 
+                    attr:null,
+                    text:"tercer elemento",
+                    child:null
                 }
             ]
+
         }
     ]
 }
 ```
-DOM ademas de realizar el trabajo de convertir un archivo `HTML` en un objeto de javscript, nos ofrece un `API`(Aplication Programming Interface- interfaz de programacion de aplicacion).
-
-
-## SELECTORES - recorriendo el dom
-Los selectores nos permite obtener o capturar una o varias `html` incluyendo sus atributos, contenido e hijos si los tuviera.
-los selectores que podemos utlizar son variados podemos capturar etiqueta a travez de sus atributos como de el nombre de la etiqueta misma.
-los selectores son `funciones` si hablamos de poo entonces se puede decir que son `metodos`, son los siguientes:
-- **getElementById** - devuelve un elemento(etiqueta)que tenga un id especifico:
+DOM a demas de ralizar el trabajo de convertir un archivo `HTML` en un objeto de javascript, nos ofrece una `API` ( Application Programming Interfaces-Interfaz de programacion de aplicaciones).
+## Selectores - recorriendo el DOM
+Los selectores nos permite obtener o capturar una o varias etiquetas HTML incluyendo sus atributos, contenido e hijos en caso de que los tuviera.
+Los selectores que podemos utilizar son variables, podemos capturar etiqueta a través de sus atributos como de el nombre de la etiqueta misma.
+Los selectores son `funciones` si hablamos de `poo` entonces podemos decir que son `metodos`. son los siguientes:
+- **getElementById** - devuelve un elemento(etiqueta) que tenga un id especifico.
 ```html
 <p id="uno">primer texto</p>
-<p id="dos">segundo texto</p>
+<p id="dos">segundo texto</p> <!--no puede haber dos id uguales, el id es unico-->
 ```
 ```js
 let parrafo=document.getElementById("dos")
 ```
 - **getElementByClassName** - devuelve un elemento que tenga una clase especifica.
 ```html
-<h1 id="titulo"> titulo</h1>
-<p class="parrafo">parrafo uno</p>
-<p class="parrafo_dos">parrafo dos</p>
+<h1 id="titulo">titulo</h1>
+<p class="parrafo">parrafo uno<p>
+<p id="parrafo_dos">parrafo dos</p>
 ```
 ```js
-let parrafo=document.getElementByClassName("parrafo")
-// 
+let parrafo=documento.getElementByClassName("parrafo")
 ```
-- **querySelector** - devuelve el primer elemento que conocida conel selector ingreado puede ser un id,class,name o tag.
+- **querySelector** - devuelve el primer elemento que coincida con el selector ingresado, puede ser un id, class, name o tag(etiqueta).
 ```html
-<h1 id="titulo"> titulo</h1>
-<p class="parrafo">parrafo uno</p>
+<h1 id="titulo">titulo</h1>
+<p class="parrafo">parrafo uno<p>
 <p id="parrafo_dos">parrafo dos</p>
 <h2>subtitulo</h2>
 ```
 ```js
-let titulo=document.querySelector("#titulo")
-let primerParrafo=document.querySelector(".parrafo")
+let titulo=document.querySelector("#titulo") // si es id se usa #
+let primerParrafo=document.querySelector(".parrafo") //si es clase solo va un punto
 let segundoParrafo=document.querySelector("#parrafo_dos")
-let subTitulo=document.querySelector("h2")
-
+let subTitulo=document.querySelector("h2") // si solo quiero capturar la etiqueta, solo pongo el nombre, en caso de que no tenga id ni class
 ```
-# **averiguar que otros selectores o metodos para recorrer el DOM tiene javascript** :pencil:
-- **getElementsByTagName** - Este método te permite obtener una colección de elementos con una etiqueta específica.
-```js
-let todoLosParrafos = document.getElementsByTagName("p");
-```
-- **querySelectorAll** - Este método te permite seleccionar todos los elementos que coincidan con un selector CSS.
-```js
-let elementosConClases = document.querySelectorAll(".my-class");
-```
-- **textContent** - Cambia el contenido de texto de un elemento.
-```js
-const paragraph = document.querySelector("p");
-paragraph.textContent = "Nuevo texto del párrafo";
-```
-- **innerHTML** - Cambia el contenido HTML de un elemento.
-```js
-const container = document.getElementById("my-container");
-container.innerHTML = "<p>Nuevo párrafo</p><div>Nuevo div</div>"; // Reemplaza el contenido del contenedor
-```
-
-- **setAttribute** -  Añade o cambia un atributo de un elemento.
-```js
-const image = document.getElementById("my-image");
-image.setAttribute("src", "new-image.jpg"); // Cambia la fuente de la imagen
-```
-
+**Averiguar que otros selectores o metodos para recorrer el DOM tiene javascript**
 ## Manipulacion del DOM
-- **createElement** - este metodo crea un elemento HMTL con el nombre que le pasemos por parametro.
+- **createElement** - este metodo crea un elemento HTML con el nombre que le pasemos por parametro.
 ```js
 let titulo=document.createElement("h1")
 ```
-- **appendChild** - nos permite hacer hijo un elemento dentro del otro.
+- **appendChild** - nos permite hacer hijo un elemento dentro de otro.
 ```js
 let titulo=document.createElement("h1")
-let boby=querySelector("boby")
-boby.appendChild(titulo)
-``` 
-- **insertBefore** -  Inserta un nuevo nodo antes de un nodo de referencia existente.
-```js
-const container = document.getElementById("my-container");
-const existingParagraph = container.querySelector("p");
-const newParagraph = document.createElement("p");
-newParagraph.textContent = "Párrafo insertado";
-container.insertBefore(newParagraph, existingParagraph); // Inserta el nuevo párrafo antes del párrafo existente
+let body=querySelector("body")
+body.appendChild(titulo)
 ```
-- **removeChild** - Elimina un nodo hijo de un nodo padre.
-```js
-const container = document.getElementById("my-container");
-const paragraph = container.querySelector("p");
-container.removeChild(paragraph); // Elimina el párrafo del contenedor
-```
-- **classList.add** - Añade una clase al elemento.
-```js
-const element = document.getElementById("my-element");
-element.classList.add("highlight"); // Añade la clase "highlight" al elemento
-```
+## Propiedades de los elementos DOM
+- **clasName** - nos permite setear o capturar el nombre de la clase que tenga un elemento.
+- **id** - lo mismo que className pero con el atributo id.
+- **inerHTML** - devuelve o permite insertar codigo `HTML `(incluyendo tag y texto).
+- **inerText** - devuelve o permite insertar texto en un elememnto.
+- **textcontent** - nos permite agregar o modificar el codigo de un elemento.
+- **value** - nos permite obtener o setear valores de un elemento `input`.
 
-- **classList.remove** - Elimina una clase del elemento. 
-```js
-let element = document.getElementById("my-element");
-element.classList.remove("highlight"); // Elimina la clase "highlight" del elemento
-```
-- **classList.toggle** - Añade la clase si no está presente, o la elimina si está presente.
-```js
-let element = document.getElementById("my-element");
-element.classList.toggle("active"); // Alterna la clase "active" en el elemento
-```
-## Propiedades de los elementos  DOM
-- **className** - permite setear o capturarel nombre de la clase que tenga un elemento.
-- **id** - los mismo que classname pero con el atributo id.
-- **innerText** - nos permite insertar texto en un elemento.
-- **textContent** - nos permite agregar o modificar el contenido de un elemento.
-- **value** - nos permite obtener o setear valores de un elemento `input`. 
+## Acciones o Eventos con elementos en el DOM (averiguar)
+addEventListener("clic",()=>{
+})
 
-## Acciones o eventos con elementos en el DOM (averiguar) :memo:
+> [!NOTE]
+> Tecnologias para el procesamiento de texto a través del marcado o `markup` (etiquetas- que nos permite a través de palabras reservadas darle un estilo o significado al contenido de las etiquetas). La primera tecnologia se fue `xml` despues nace `html`.**dato** toda la suite de microsoft office utiliza xml. Despues la ultima generacion de tecnologias de marcado de texto `markdown`.
 
-- **addEventListener** -Añade un evento a un elemento.
-```js
-document.getElementById("miBoton").addEventListener("click", function() {
-    alert("Botón clicado!");
-});
-```
-- **removeEventListener** - Remueve un evento de un elemento.
-```js 
-function miFuncion() {
-    alert("Evento disparado");
-}
-
-let elemento = document.getElementById("miBoton");
-elemento.addEventListener("click", miFuncion);
-
-// Remover el event listener
-elemento.removeEventListener("click", miFuncion);
-```
-- **dispatchEvent** - Despacha un evento en el elemento, lo cual activa los event listeners asociados.
-```js 
-let evento = new Event("miEvento");
-document.getElementById("miElemento").dispatchEvent(evento);
-```
-- **CustomEvent** - Crea un evento personalizado que puede tener datos adicionales.
-```js 
-let eventoPersonalizado = new CustomEvent("miEventoPersonalizado", {
-    detail: { mensaje: "Hola, mundo!" }
-});
-
-document.getElementById("miElemento").addEventListener("miEventoPersonalizado", function(event) {
-    console.log(event.detail.mensaje);
-});
-
-// Despachar el evento personalizado
-document.getElementById("miElemento").dispatchEvent(eventoPersonalizado);
-```
-- **event.target** - Devuelve el elemento que disparó el evento.
-```js 
-document.getElementById("miBoton").addEventListener("click", function(event) {
-    console.log(event.target); // El elemento que disparó el evento
-});
-```
-- **event.type** - Devuelve el tipo de evento.
-```js 
-document.getElementById("miBoton").addEventListener("click", function(event) {
-    console.log(event.type); // "click"
-});
-
-```
-- **event.preventDefault** - Evita la acción predeterminada del evento.
-```js 
-document.getElementById("miEnlace").addEventListener("click", function(event) {
-    event.preventDefault(); // Previene que el enlace navegue
-    console.log("Navegación prevenida");
-});
-
-```
-- **event.stopPropagation** - Previene que el evento se propague a otros event listeners.
-```js 
-document.getElementById("miElemento").addEventListener("click", function(event) {
-    event.stopPropagation(); // Previene la propagación del evento
-    console.log("Propagación prevenida");
-});
-
-```
-
-> [!NOTE] 
-> Tecnologias para el procesamiento de texto a travez de marca `markup`(etiquetas que nos permite a travez de palabras reservadas darle un estilo o significado al contenido de las etiquetas). La primera tecnologia fue `xml` despues nace `html` despues la ultima generacion de tecnologia de markado de texto `markdown`.

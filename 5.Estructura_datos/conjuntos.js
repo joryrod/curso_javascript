@@ -69,7 +69,7 @@
 //     return contador;
 // }
 
-// // Ejemplo de uso
+// Ejemplo de uso
 // let letras = ['a', 'b', 'a', 'c', 'a', 'e', 'f', 'a'];
 // console.log("Cantidad de 'a':", contarVocalesA(letras)); // Salida: 4
 

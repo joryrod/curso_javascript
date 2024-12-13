@@ -1,11 +1,6 @@
-boby{
-   display:flex;
-   justify-content:center;
-}
-main{
-    background: aquamarine;
-    width: 60%;
-    padding: 3em;
+body{
+    display: flex;
+    justify-content: center;
 }
 .titulo{
     text-align: center;
@@ -15,14 +10,19 @@ main{
     flex-direction: row;
     justify-content: center;
 }
+main{
+    background: aquamarine;
+    width: 60%;
+    padding: 3em;
+}
 .contenido>input{
     height: 2em;
     border-radius: 5px;
 }
 .contenido>button{
-    background: palevioletred;
-    color: antiquewhite;
-    font-weight: bold;
+    background: rgb(55, 59, 122);
+    color: white;
+    font-weight:bold ;
 }
 .contenido>button>span{
     font-size: 18px;

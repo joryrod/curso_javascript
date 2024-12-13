@@ -1,19 +1,18 @@
-/**let parrafoDos=document.getElementById("dos")
-console.log(parrafoDos.textContent="hola")*/
+// let parrafoDos=document.getElementById("dos")
+// let texto=prompt("ingresa tu nombre")
+// console.log(parrafoDos.textContent="hola",texto) 
 
-/**let parrafoDos=document.getElementById("dos")
-let texto=prompt("ingresa un texto")
-parrafoDos.textContent=texto*/
-//<div id="miId class="miClase" style="background:red; width:200px;height:200px"></div>
-let newElem=document.createElement("div")
-newElem.id="miId"
-newElem.className=""
-let respuesta=prompt("escribe el color azul o rojo para ver el cuadro")
+//<div id="miId" class="miClase" style="background:red; width:200px; height:200px"></div>
+let newElement=document.createElement("div")   
+newElement.id="miId" //agregar atributo id
+newElement.className="miClase"  //agregar atributo de tipo class
+// newElement.style="background:red; width:200px; height:200px"   // atributo style
+// es mejor agregar miClase style en mi archiv css
+let respuesta=prompt("escribe azul o rojo")
 if (respuesta=="rojo"){
-    newElem.className="cuadro_rojo"
+    newElement.className="cuadro_rojo"
 }else{
-    newElem.className ="cuadro:azul"
+    newElement.className="cuadro_azul"
 }
-//newElem.style="background:red;width:200px; height:200px"
-let boby=document.querySelector("boby")
-boby.appendChild(newElem)
+let body=document.querySelector("body")   
+body.appendChild(newElement)   //agregar un elemento nuevo como hijo             
